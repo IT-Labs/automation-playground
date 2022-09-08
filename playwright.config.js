@@ -12,7 +12,7 @@ const { devices } = require("@playwright/test");
  * @type {import('@playwright/test').PlaywrightTestConfig}
  */
 const config = {
-  testDir: "./tests/e2e",
+  testDir: "./playwright/tests/e2e",
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -41,9 +41,9 @@ const config = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-    browserName: "chromium",
+    browserName: "firefox",
     headless: true,
-    baseURL: "http://127.0.0.1:3000/#/",
+    baseURL: "http://localhost:3000",
   },
 
   /* Configure projects for major browsers */
