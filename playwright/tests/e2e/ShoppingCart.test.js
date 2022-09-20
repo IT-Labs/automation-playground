@@ -10,10 +10,10 @@ const email = customerUserData.email;
 const password = customerUserData.password;
 let productName;
 
-let page;
+let context, page;
 
 test.beforeEach(async ({ browser }) => {
-  const context = await browser.newContext();
+  context = await browser.newContext();
   page = await context.newPage();
   const commonsPage = new CommonsPage(page);
   const loginPage = new LoginPage(page);
@@ -24,7 +24,7 @@ test.beforeEach(async ({ browser }) => {
 });
 
 test.afterEach(async ({ browser }) => {
-  await browser.close();
+  await context.close();
 });
 
 test("Purchase Apple Juice", async () => {
