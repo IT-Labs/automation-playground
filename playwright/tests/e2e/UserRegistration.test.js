@@ -4,7 +4,7 @@ const { CommonsPage } = require("../pages/commons-page");
 
 const newUserInformation = require("../../utils/data/register-with-email-data.json");
 
-//test.describe.configure({ mode: "serial" });
+test.describe.configure({ mode: "serial" });
 
 let page;
 
